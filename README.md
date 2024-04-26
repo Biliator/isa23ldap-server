@@ -51,8 +51,12 @@ BER uses the Tag-Length-Value (TLV) format to encode information. The type or ta
 
 Although TLV encoding increases the number of octets transferred, it makes it easier to introduce new fields into messages that even older implementations can handle. Another advantage is that the predictability of the coding makes debugging easier. [3]
 
+<img src="img1.png" alt="Image 1" style="max-width: 200px;">
+
 Each incoming message must follow a predetermined format. E.g. `bindRequest` It always has a sequence label, followed by the length of the sequence, `messegeID`, the label of the bindRequest, the length of the message and the rest of the message.
 Accordingly, bindResponse can also be fixed.
+
+<img src="img2.png" alt="Image 2" style="max-width: 200px;">
 
 The first octet indicates that it is a sequence and the second the rest of it. `0x02` `0x01` `0x01`
 indicates the messageID (`0x02` number label, `0x01` length and `0x01` value). `0x61` is the `bindResponse` label and `0x07` is its length. The rest is a message that contains things like authentication.
@@ -398,9 +402,16 @@ result: 0 Success
 
 LDAP - Wikipedia. (2023)
 [https://cs.wikipedia.org/wiki/LDAP]
-DigitalOcean. (2023). Understanding the LDAP Protocol, Data Hierarchy, and Entry Components. [https://www.digitalocean.com/community/tutorials/understanding-the-ldap-protocol-data-hierarchy-and-entry-components]
-OSS Nokalva. (2023). Basic encoding rules. [https://www.oss.com/asn1/resources/asn1-made-simple/asn1-quick-reference/basic-encoding-rules.html]
-Data tracker. RFC steam IETF. (1995). Tim Howes, Steve Kille, Wengyik Yeong. [https://datatracker.ietf.org/doc/html/rfc1777]
+
+DigitalOcean. (2023). Understanding the LDAP Protocol, Data Hierarchy, and Entry Components.
+[https://www.digitalocean.com/community/tutorials/understanding-the-ldap-protocol-data-hierarchy-and-entry-components]
+
+OSS Nokalva. (2023). Basic encoding rules. 
+[https://www.oss.com/asn1/resources/asn1-made-simple/asn1-quick-reference/basic-encoding-rules.html]
+
+Data tracker. RFC steam IETF. (1995). Tim Howes, Steve Kille, Wengyik Yeong. 
+[https://datatracker.ietf.org/doc/html/rfc1777]
+
 NESFIT/IPK-Projects. (2023).
 [https://git.fit.vutbr.cz/NESFIT/IPK-Projekty/src/branch/master]
 
